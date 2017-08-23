@@ -101,6 +101,7 @@ void chatbox::finalize_setup()
 	roomlistbox_ = find_widget<listbox>(this, "room_list", false, true);
 
 	// We need to bind a lambda here since switch_to_window is overloaded.
+// A lambda alone would be more verbose because it'd need to specify all the parameters.
 	connect_signal_notify_modified(*roomlistbox_,
 		std::bind([this]() { switch_to_window(roomlistbox_->get_selected_row()); }));
 

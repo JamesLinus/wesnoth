@@ -543,7 +543,7 @@ void listbox::finalize(builder_grid_const_ptr header,
 		//
 		// - vultraz, 2017-08-23
 		//
-		if(toggle_button* selectable = find_widget<toggle_button>(&p, "sort_" +  std::to_string(i), false, false)) {
+		if(toggle_button* selectable = find_widget<toggle_button>(&p, "sort_" + std::to_string(i), false, false)) {
 			// Register callback to sort the list.
 			connect_signal_notify_modified(*selectable, std::bind(&listbox::order_by_column, this, i, _1));
 
